@@ -20,6 +20,23 @@ import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 
 export default function Home() {
+    // State variables for the form fields
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      // TODO: Handle form submission logic here
+      console.log('Name:', name);
+      console.log('Email:', email);
+      console.log('Message:', message);
+      // Reset form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+    };
+  
   const [darkMode, setDarkMode] = useState(false);
 
   return (
@@ -80,10 +97,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-       
+
         <section className="py-10">
           <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
+            <h3 className="text-3xl py-1 dark:text-white ">Projects</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               During my academic years in Computer Science and Engineering
               (CSE), I have undertaken numerous projects as part of my web
@@ -96,7 +113,6 @@ export default function Home() {
               have equipped me with practical hands-on experience and a deep
               understanding of creating dynamic and engaging digital solutions.
             </p>
-           
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap justify-center">
             <div className="basis-1/3 flex-2 ">
@@ -135,7 +151,6 @@ export default function Home() {
                 src={web4}
               />
             </div>
-           
           </div>
         </section>
 
@@ -143,15 +158,19 @@ export default function Home() {
           <div>
             <h3 className="text-3xl py-1 dark:text-white ">Technical Skills</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-            I have been passionately working on honing my technical skills since my first year of undergraduate studies. In addition to my academic courses, I have dedicated countless hours to learning and mastering various programming languages, frameworks, tools, and software. I am always eager to expand my knowledge and explore new technologies.
+              I have been passionately working on honing my technical skills
+              since my first year of undergraduate studies. In addition to my
+              academic courses, I have dedicated countless hours to learning and
+              mastering various programming languages, frameworks, tools, and
+              software. I am always eager to expand my knowledge and explore new
+              technologies.
             </p>
-            
           </div>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image src={design} width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2  ">
-              Frameworks/Libraries
+                Frameworks/Libraries
               </h3>
               <p className="py-2">
                 Creating elegant websites using different framework & libraries.
@@ -191,6 +210,53 @@ export default function Home() {
             </div>
           </div>
         </section>
+<section>
+        <div className="mt-10">
+          <h3 className="text-3xl py-1 dark:text-white">Contact Me</h3>
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <div className="mb-4">
+              <label htmlFor="name" className="block mb-2 text-gray-800 dark:text-gray-200">Name</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-teal-500"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block mb-2 text-gray-800 dark:text-gray-200">Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-teal-500"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="message" className="block mb-2 text-gray-800 dark:text-gray-200">Message</label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-teal-500"
+                rows={4}
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="bg-teal-500 text-white px-4 py-2 rounded-md"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+        
       </main>
     </div>
   );
