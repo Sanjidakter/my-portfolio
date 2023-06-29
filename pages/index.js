@@ -18,6 +18,7 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import Link from "next/link";
 
 export default function Home() {
     // State variables for the form fields
@@ -99,60 +100,78 @@ export default function Home() {
         </section>
 
         <section className="py-10">
-          <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Projects</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              During my academic years in Computer Science and Engineering
-              (CSE), I have undertaken numerous projects as part of my web
-              courses, honing my skills and knowledge in the field.
-              Additionally, I have pursued several personal projects that have
-              allowed me to explore and apply my expertise in web development.
-              These
-              <span className="text-teal-500"> knowledge </span>
-              and <span className="text-teal-500">keen interest </span>
-              have equipped me with practical hands-on experience and a deep
-              understanding of creating dynamic and engaging digital solutions.
-            </p>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap justify-center">
-            <div className="basis-1/3 flex-2 ">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web1}
-              />
+  <div>
+    <h3 className="text-3xl py-1 dark:text-white ">Projects</h3>
+    <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+      During my academic years in Computer Science and Engineering (CSE), I have undertaken numerous projects as part of my web courses, honing my skills and knowledge in the field. Additionally, I have pursued several personal projects that have allowed me to explore and apply my expertise in web development. These <span className="text-teal-500">knowledge</span> and <span className="text-teal-500">keen interest</span> have equipped me with practical hands-on experience and a deep understanding of creating dynamic and engaging digital solutions.
+    </p>
+  </div>
+  <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap justify-center">
+    <div className="basis-1/3 flex-2">
+      <Image
+        className="rounded-lg object-cover"
+        width={"100%"}
+        height={"100%"}
+        layout="responsive"
+        src={web1}
+      />
+    </div>
+    <div className="basis-1/3 flex-2">
+      <Image
+        className="rounded-lg object-cover"
+        width={"100%"}
+        height={"100%"}
+        layout="responsive"
+        src={web2}
+      />
+    </div>
+    <div className="basis-1/3 flex-2">
+      <Image
+        className="rounded-lg object-cover"
+        width={"100%"}
+        height={"100%"}
+        layout="responsive"
+        src={web3}
+      />
+    </div>
+    <div className="basis-1/3 flex-2">
+      <Image
+        className="rounded-lg object-cover"
+        width={"100%"}
+        height={"100%"}
+        layout="responsive"
+        src={web4}
+      />
+    </div>
+    <div className="flex-2">
+      <div className="relative">
+        <Link href="/projects">
+          <a className="rounded-lg overflow-hidden block">
+            <Image
+              className="rounded-lg object-cover"
+              width={"100%"}
+              height={"100%"}
+              layout="responsive"
+              src={web5}
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300">
+              <span className="text-white text-xl font-semibold">Know More</span>
             </div>
-            <div className="basis-1/3 flex-2">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web2}
-              />
-            </div>
-            <div className="basis-1/3 flex-2">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web3}
-              />
-            </div>
-            <div className="basis-1/3 flex-2">
-              <Image
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                src={web4}
-              />
-            </div>
-          </div>
-        </section>
+          </a>
+        </Link>
+      </div>
+    </div>
+    <div className="basis-1/3 flex-2">
+      <Image
+        className="rounded-lg object-cover"
+        width={"100%"}
+        height={"100%"}
+        layout="responsive"
+        src={web6}
+      />
+    </div>
+  </div>
+</section>
 
         <section>
           <div>
